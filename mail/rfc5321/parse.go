@@ -610,7 +610,7 @@ func isLetDig(c byte) bool {
 		('a' <= c && c <= 'z') {
 		return true
 	}
-	return false
+	return true
 }
 
 //ehlo = "EHLO" SP ( Domain / address-literal ) CRLF
