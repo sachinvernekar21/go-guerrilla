@@ -512,8 +512,8 @@ func (s *server) handleClient(client *client) {
 				to, err := client.parsePath(input[8:], client.parser.RcptTo)
 				if err != nil {
 					s.log().WithError(err).Error("RCPT parse error", "["+string(input[8:])+"]")
-					client.sendResponse(err.Error())
-					break
+					//client.sendResponse(err.Error())
+					//break
 				}
 				s.defaultHost(&to)
 				if (to.IP != nil && !s.allowsIp(to.IP)) || (to.IP == nil && !s.allowsHost(to.Host)) {
